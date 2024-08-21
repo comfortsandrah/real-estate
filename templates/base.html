@@ -7,7 +7,9 @@
         {% include './dependancies/css.html' %}
     </head>
     <body>
-        
+        {% include './components/header.html' %}
         {% block body %}{% endblock body %}
+        {% include './components/footer.html' %}
+        {% include './dependancies/js.html' %}
     </body>
 </html>

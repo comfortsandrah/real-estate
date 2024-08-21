@@ -1,0 +1,275 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+header {
+    background: #fff;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    width: 100%;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 70px; /* Adjust size as needed */
+    margin-right: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+nav {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.main-nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+
+}
+
+.main-nav li {
+    margin-right: 20px;
+}
+.main-nav a:hover {
+    color: #ff6f61; 
+}
+.main-nav li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+.action-buttons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.action-buttons li {
+    margin-left: 10px;
+}
+.btn-primary {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #ff6f61;
+    border: 1px solid #ff6f61;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.main-banner {
+    background: url("{% static '/images/banner.jpg' %}") no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.main-banner h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.main-banner p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.main-banner button {
+    background: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.featured-properties {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.featured-properties h2 {
+    margin-bottom: 30px;
+}
+
+.property-carousel {
+    display: flex;
+    justify-content: space-around;
+}
+
+.carousel-item {
+    width: 30%;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-item h3 {
+    margin-top: 10px;
+}
+
+.how-it-works {
+    background: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    margin-bottom: 30px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+}
+
+.step {
+    width: 30%;
+}
+
+.testimonials {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonials h2 {
+    margin-bottom: 30px;
+}
+
+.testimonial-slider {
+    display: flex;
+    justify-content: space-around;
+}
+
+.slider-item {
+    width: 30%;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.footer-container {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.foot{
+    display: flex;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-newsletter p {
+    margin: 0 0 10px;
+    padding-right: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    width: auto;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.link-group h4 {
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.link-group ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.link-group ul li {
+    margin-bottom: 8px;
+}
+
+.link-group ul li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+}
+
+.social-links {
+    justify-content: left;
+    justify-items: left;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 22px;
+    height: 18px;
+    margin-right: 5px;
+    vertical-align: left;
+}
+
