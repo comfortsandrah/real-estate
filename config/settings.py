@@ -163,9 +163,9 @@ AUTHENTICATION_BACKENDS = (
 # django-allauth registration settings
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login/"
-LOGIN_REDIRECT_URL = "/accounts/email/"
+LOGIN_REDIRECT_URL = "/"
 
 
 # Provider specific settings
@@ -178,3 +178,13 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     },
 }
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND="django.core.mail.backends.console.EmailBackend"
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "dancunian10340@gmail.com"
+EMAIL_HOST_PASSWORD = "yxua gbqx xkmv xeyn"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = "dancunian10340@gmail.com"

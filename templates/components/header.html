@@ -1,23 +1,27 @@
 {% load static %}
 <header>
-    <div class="container">
-        <div class="logo">
-            <!-- Company icon/logo -->
-            <img src="{% static '/images/logo.png' %}" alt="Company Logo" />
-        
-        <nav>
-            <ul class="main-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Virtual Tours</a></li>
-                <li><a href="#">Listings</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-            <ul class="action-buttons">
-                <li><button class="btn-primary">Log In</button></li>
-                <li><button class="btn-secondary">Sign Up</button></li>
-            </ul>
+  <div class="container">
+    <div class="logo">
+      <!-- Company icon/logo -->
+      <img src="{% static '/images/logo.png' %}" alt="Company Logo" />
+
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Virtual Tours</a></li>
+          <li><a href="#">Listings</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <ul class="action-buttons">
+            <li>
+              <a href="/auth/login">
+                <button class="btn-primary">Log In</button>
+              </a>
+            </li>
+            <li><button class="btn-secondary">Sign Up</button></li>
+          </ul>
         </ul>
-        </nav>
+      </nav>
     </div>
-    </div>
+  </div>
 </header>
