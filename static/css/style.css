@@ -190,6 +190,7 @@ nav {
 
 .foot{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .footer-logo img {
@@ -279,7 +280,7 @@ nav {
     margin-top: 0;
     max-width: 335px;
     height: 373px;
-    padding-top: 144px;
+    /* padding-top: 144px; */
   }
   
   .contact-us h2 {
@@ -320,5 +321,32 @@ nav {
   
   .contact-us button:hover {
     opacity: 0.9;
+  }
+
+  @media screen and (max-width:480px){
+    .navbar svg{
+        display: block;
+      }
+     .navbar{
+      max-width: 247px;
+      position: relative;
+     }
+     .nav-menu  {
+      display: none;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      left: 140px;
+      top: 65px;
+      text-align: center;
+    }
+    .nav-menu li {
+      margin-top: 20px;
+    }
+    .container{
+
+    }
+
+    
   }
 

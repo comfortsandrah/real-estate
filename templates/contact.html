@@ -11,6 +11,7 @@
 
 {% block body %}
 <section id="contact-us" class="contact-us">
+    <h2 class="text-2xl font-bold">Reach Out to Us</h2>
     <form method="post" class="my-class">
         {% csrf_token %}
         {{ form |crispy }}
