@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Real Estate</title>
+    <!-- Favicon link -->
+    <link rel="icon" href="{% static '/images/logo.png' %}" type="image/x-icon">
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/virtualtours.css' %}" rel="stylesheet">
+</head>
+<body>
+    {% include './components/header.html' %}
+
+    <main class="h-full pt-36 w-full">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <main class="main">
+            <h2>Book a Tour for: <span id="selected-property">{{property.name}}</span></h2>     
+            <form id="booking-form">
+                <input type="hidden" id="property-id-input" name="propertyId">
+
+                <label for="email">Enter Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+    
+                <label for="tour-date">Select Tour Date:</label>
+                <input type="date" id="tour-date" name="tourDate" required>
+    
+                <label for="tour-time">Select Tour Time:</label>
+                <input type="time" id="tour-time" name="tourTime" required>
+    
+                <button type="submit">Book Tour</button>
+            </form>
+        </main>
+    
+        <script >
+                // Extract URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const propertyId = urlParams.get('propertyId');
+    const propertyName = urlParams.get('propertyName');
+
+    // Pre-fill the booking form with property details
+    if (propertyName) {
+        document.getElementById('selected-property').innerText = propertyName;
+        document.getElementById('property-id-input').value = propertyId;
+    }
+
+    // Handle form submission (example)
+    document.getElementById('booking-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Here you would typically handle form submission, e.g., send the data to a server
+        alert(`Tour booked on ${document.getElementById('tour-date').value} at ${document.getElementById('tour-time').value}`);
+
+        // Collect form data
+        const email = document.getElementById('email').value;
+        const tourDate = document.getElementById('tour-date').value;
+        const tourTime = document.getElementById('tour-time').value;
+
+        // Redirect to listings page after clicking "Okay"
+        window.location.href = '/properties/';
+
+});
+
+        </script>
+        {% include './components/footer.html' %}
+</body>
+</html>

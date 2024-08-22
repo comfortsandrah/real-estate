@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Real Estate</title>
+    <!-- Favicon link -->
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static '/images/logo.png' %}" type="image/x-icon">    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+</head>
+<body>
+    {% include './components/header.html' %}
+    <main class="h-full pt-36 w-full">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <section class="intro-message pt-36">
+        <h1>Find Your Dream Property</h1>
+        <p>Welcome to our property listings page, where you can explore a wide range of real estate options. Whether you're looking to buy, rent, or invest, we have a diverse selection of properties to meet your needs. Use the search filters to narrow down your choices and find the perfect property in your desired location. Start your journey today!</p>
+    </section>
+
+        <!-- Search Filters Section -->
+        <section class="property-listings">
+            <h2>Explore Our Latest Listings</h2>
+            <form id="filter-form" method="GET">
+                <select id="category">
+                    <option value="">Category</option>
+                    <option value="sale">Sale</option>
+                    <option value="rent">Rent</option>
+                </select>
+                <input type="text" id="location" placeholder="Enter a location, Province, Town or Suburb">
+                <input type="number" id="max-price" placeholder="Max Price">
+                <button type="submit">Search</button>
+            </form>
+             
+             <div class="listings-grid" id="listings-grid">
+                 {% for property in properties %}
+                 <div class="listing-item">
+                     <a href={{property.get_absolute_url}}>
+                         <img src={{ property.image.url }} height="250px" width="250px" alt="3 Bed Apartment For Sale In Nyali Area">
+                         <h3>{{property.pricing}}</h3>
+                         <p>{{property.name}}</p>
+                         <p><i>{{property.location}}</i></p>
+                        </a>
+                    </div>
+                    {% empty %}
+                    <div id="no-results-message">
+                        <p>Sorry, no listings found. Please try adjusting your search filters.</p>
+                    </div>
+                {% endfor %}
+    
+            </div>
+        </section>
+        <script>
+            document.getElementById('filter-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+            
+                // Get the values from the form fields
+                const category = document.getElementById('category').value;
+                const location = document.getElementById('location').value;
+                const maxPrice = document.getElementById('max-price').value;
+            
+                // Construct the query parameters
+                const params = new URLSearchParams({
+                    category: category,
+                    location: location,
+                    'max-price': maxPrice
+                });
+            
+                // Redirect to the Django view with the query parameters
+                window.location.href = `/properties/?${params.toString()}`;
+            });
+            </script>
+    </main>
+        {% include './components/footer.html' %}
+        {% include './dependancies/js.html' %}
+</body>
+</html>
