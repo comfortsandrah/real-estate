@@ -10,3 +10,6 @@ def home(request):
 def contact(request):
     context = {"title": "Contact Us", "form": forms.ContactForm()}
     return render(request, "contact.html", context=context)
+
+def about(request):
+    return render(request, "about.html")

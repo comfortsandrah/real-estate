@@ -273,3 +273,52 @@ nav {
     vertical-align: left;
 }
 
+.contact-us {
+    text-align: center;
+    margin: 101px auto;
+    margin-top: 0;
+    max-width: 335px;
+    height: 373px;
+    padding-top: 144px;
+  }
+  
+  .contact-us h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .contact-us form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-us input,
+  .contact-us textarea {
+    width: 335px;
+    height: 29px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-us button {
+    background-color: #ff6565;
+    border-radius: 50px;
+    width: 162px;
+    height: 44px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 56px;
+  }
+  
+  .contact-us button:hover {
+    opacity: 0.9;
+  }
+
