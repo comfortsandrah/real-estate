@@ -1,5 +1,5 @@
 {% load static %}
-<header class="fixed top-0 ">
+<header class="fixed top-0">
   <div class="container">
     <div class="logo">
       <!-- Company icon/logo -->
@@ -13,13 +13,24 @@
           <li><a href="#">About Us</a></li>
           <li><a href="#">Contact Us</a></li>
           <ul class="action-buttons">
+            {% if request.user.is_authenticated %}
+            <li>
+              <a href="/auth/logout">
+                <button class="btn-primary">Log Out</button>
+              </a>
+            </li>
+            {% else %}
             <li>
               <a href="/auth/login">
                 <button class="btn-primary">Log In</button>
               </a>
             </li>
-            <li><button class="btn-secondary">Sign Up</button></li>
-          </ul>
+            <li>
+              <a href="/auth/signup">
+                <button class="btn-secondary">Sign Up</button></li>
+              </a>
+            </ul>
+            {% endif %}
         </ul>
       </nav>
     </div>
