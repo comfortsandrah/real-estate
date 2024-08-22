@@ -3,12 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Notify | {% block title %}{% endblock title %}</title>
+        <title>RealEstate | {% block title %}{% endblock title %}</title>
         {% include './dependancies/css.html' %}
     </head>
     <body>
         {% include './components/header.html' %}
-        {% block body %}{% endblock body %}
+        <main class="h-full pt-36">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% block body %}{% endblock body %}
+        </main>
         {% include './components/footer.html' %}
         {% include './dependancies/js.html' %}
     </body>
