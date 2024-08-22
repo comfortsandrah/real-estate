@@ -86,7 +86,7 @@ nav {
 }
 
 .main-banner {
-    background: url("{% static '/images/banner.jpg' %}") no-repeat center center/cover;
+    background: url("/static/images/banner.jpg") no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 100px 0;
@@ -190,7 +190,6 @@ nav {
 
 .foot{
     display: flex;
-    flex-wrap: wrap;
 }
 
 .footer-logo img {
@@ -323,7 +322,7 @@ nav {
     opacity: 0.9;
   }
 
-  @media screen and (max-width:480px){
+  /* @media screen and (max-width:480px){
     .navbar svg{
         display: block;
       }
@@ -348,5 +347,13 @@ nav {
     }
 
     
-  }
+  } */
 
+  .bg-about {
+    background-image: linear-gradient(to bottom right, rgba(68, 68, 92, 0.5), rgba(152, 87, 54, 0.5)), url("/static/images/img6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
